@@ -1,2 +1,6 @@
 # CWin32
 Lets make win32 looks good with class.
+
+First I'm sorry for my bad english, but, it's only used to explain same functions and... others stuffs...
+So, don't worry if you don't understand something. Later, I'll create a documentation with a decent english...
+(Honestly, even I don't understand the comments that I make).
