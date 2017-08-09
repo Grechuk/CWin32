@@ -69,6 +69,8 @@ int GenWnd::Init_Struct(void)
 
 	wnd->style = CS_HREDRAW | CS_VREDRAW;
 	wnd->hbrBackground = (HBRUSH)(COLOR_WINDOW+1);
+	
+	return 0;
 }
 
 
@@ -83,8 +85,11 @@ int GenWnd::_RegisterClassEx(void)
 			_T("ERROR DA WIN32 API"),
 			MB_ICONERROR | MB_OK);
 		
-		exit(-1);
+		return (-1);
 	}
+	
+	Registered = true;
+	return 0;
 }
 
 
@@ -112,8 +117,11 @@ int GenWnd::Create(void)
 			_T("ERROR DA WIN32 API"),
 			MB_ICONERROR | MB_OK);
 			
-		exit(-1);
+		return (-1);
 	}
+	
+	Created = true;
+	return 0;
 }
 
 
@@ -308,3 +316,247 @@ int GenWnd::hbrBackground(HBRUSH h)
 		return 0;
 	}
 }
+
+
+/* Setters do refentes aos dados de criação da janela. */
+//-------------------------------------------------------------------------------
+int GenWnd::Set_dwExStyle(DWORD s)
+{
+	if(!Registered && !Created)
+	{
+		dwExStyle = s;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_lpClassName(LPCTSTR *s)
+{
+	// TODO.
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_lpWindowName(LPCTSTR *s)
+{
+	// TODO.
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_dwStyle(DWORD s)
+{
+	if(!Registered && !Created)
+	{
+		dwStyle = s;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_x(int _x)
+{
+	if(!Registered && !Created)
+	{
+		x = _x;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_y(int _y)
+{
+	if(!Registered && !Created)
+	{
+		y = _y;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_nWidth(int w)
+{
+	if(!Registered && !Created)
+	{
+		nWidth = w;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_nHeight(int h)
+{
+	if(!Registered && !Created)
+	{
+		nHeight = h;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_hWndParent(HWND h)
+{
+	if(!Registered && !Created)
+	{
+		hWndParent = h;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_hMenu(HMENU h)
+{
+	if(!Registered && !Created)
+	{
+		hMenu = h;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Set_lpParam(LPVOID l)
+{
+	if(!Registered && !Created)
+	{
+		lpParam = l;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
+}
+
+
+
+//-------------------------------------------------------------------------------
+// Getters.
+UINT GenWnd::Get_style(void)
+{
+	return wnd->style;
+}
+
+
+//-------------------------------------------------------------------------------
+UINT GenWnd::Get_cbSize(void)
+{
+	return wnd->cbSize;
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Get_cbClsExtra(void)
+{
+	return wnd->cbClsExtra;
+}
+
+
+//-------------------------------------------------------------------------------
+int GenWnd::Get_cbWndExtra(void)
+{
+	return wnd->cbWndExtra;
+}
+
+
+//-------------------------------------------------------------------------------
+WNDPROC GenWnd::Get_lpfnWndProc(void)
+{
+	return wnd->lpfnWndProc; 
+}
+
+
+//-------------------------------------------------------------------------------
+void GenWnd::Get_lpszMenuName(LPCTSTR *s)
+{
+	// TODO.
+}
+
+
+//-------------------------------------------------------------------------------
+void GenWnd::Get_lpszMenuName(LPCTSTR *s)
+{
+	// TODO.
+}
+
+
+//-------------------------------------------------------------------------------
+HINSTANCE GenWnd::Get_hInstance(void)
+{
+	return wnd->hInstance;
+}
+
+
+//-------------------------------------------------------------------------------
+HICON Get_hIcon(void)
+{
+	return wnd->hIcon;
+}
+
+
+//-------------------------------------------------------------------------------
+HICON Get_hIconSm(void)
+{
+	return wnd->hIconSm;
+}
+
+
+//-------------------------------------------------------------------------------
+HBRUSH Get_hbrBackground(void)
+{
+	return wnd->hbrBackground;
+}
+
+
+
+//-------------------------------------------------------------------------------
+// Getters referente à criação da janela.
+// TODO.
