@@ -57,7 +57,7 @@ class GenWnd
     //---------------------------------------------------------------------------
     // Contrutor e destrutor.
     GenWnd();
-    ~Genwnd();
+    ~GenWnd();
 
 
 
@@ -191,6 +191,8 @@ class GenWnd
     //---------------------------------------------------------------------------
     // -GETTERS
     // Estes retornam todos os valores solicitados.
+	HWND hWnd(void);
+
 
     // Retorna o estilo da janela
     UINT Get_style(void);
