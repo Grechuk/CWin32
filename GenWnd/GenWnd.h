@@ -293,7 +293,7 @@ class GenWnd
 	// Funções para manipulação dos estado da jaela enquanto esta está sendo exe-
 	// cutada, como grayed, unactive, destroy, GetWndText etc...
 	
-	/** TODO */
+	/*TODO */
 };
 
 
