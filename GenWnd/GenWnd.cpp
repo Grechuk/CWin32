@@ -308,3 +308,6 @@ int GenWnd::hbrBackground(HBRUSH h)
 		return 0;
 	}
 }
+
+/* TODO:
+	terminar de declarar os getters. */
