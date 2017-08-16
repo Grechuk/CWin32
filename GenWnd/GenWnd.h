@@ -39,8 +39,8 @@ class GenWnd
 
     // Variáveis para a riação de janela com CreateWindowEx().
     DWORD       dwExStyle;
-    LPCTSTR     *lpClassName;
-    LPCTSTR     *lpWindowName;
+    LPCTSTR     lpClassName;
+    LPCTSTR     lpWindowName;
     DWORD       dwStyle;
     int         x;
     int         y;

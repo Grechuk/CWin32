@@ -207,6 +207,7 @@ int GenWnd::Set_lpfnWndProc(WNDPROC f)
 
 
 ///------------------------------------------------------------------------------
+int GenWnd::Set_lpszMenuName(LPCTSTR s)
 {
 	if(!Registered && !Created)
 	{
