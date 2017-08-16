@@ -207,11 +207,11 @@ int GenWnd::Set_lpfnWndProc(WNDPROC f)
 
 
 ///------------------------------------------------------------------------------
-int GenWnd::Set_lpszMenuName(LPCTSTR *s)
+int GenWnd::Set_lpszMenuName(LPCTSTR s)
 {
 	if(!Registered && !Created)
 	{
-		// TODO.
+		wnd->lpszMenuName = s
 		return 1;
 	}
 	
@@ -223,11 +223,11 @@ int GenWnd::Set_lpszMenuName(LPCTSTR *s)
 
 
 ///------------------------------------------------------------------------------
-int GenWnd::Set_lpszClassName(LPCTSTR *s)
+int GenWnd::Set_lpszClassName(LPCTSTR s)
 {
 	if(!Registered && !Created)
 	{
-		// TODO.
+		wnd->lpszClassName = s;
 		return 1;
 	}
 	
@@ -337,16 +337,34 @@ int GenWnd::Set_dwExStyle(DWORD s)
 
 
 //-------------------------------------------------------------------------------
-int GenWnd::Set_lpClassName(LPCTSTR *s)
+int GenWnd::Set_lpClassName(LPCTSTR s)
 {
-	// TODO.
+	if(!Registered && !Created)
+	{
+		lpClassName = s;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
 }
 
 
 //-------------------------------------------------------------------------------
-int GenWnd::Set_lpWindowName(LPCTSTR *s)
+int GenWnd::Set_lpWindowName(LPCTSTR s)
 {
-	// TODO.
+	if(!Registered && !Created)
+	{
+		lpWindowName = s;
+		return 1;
+	}
+	
+	else
+	{
+		return 0;
+	}
 }
 
 
@@ -486,6 +504,7 @@ HWND GenWnd::hWnd(void)
 	return hWnd;
 }
 
+
 //-------------------------------------------------------------------------------
 UINT GenWnd::Get_style(void)
 {
@@ -522,16 +541,16 @@ WNDPROC GenWnd::Get_lpfnWndProc(void)
 
 
 //-------------------------------------------------------------------------------
-void GenWnd::Get_lpszMenuName(LPCTSTR *s)
+LPCTSTR GenWnd::Get_lpszMenuName(void)
 {
-	// TODO.
+	return wnd->lpszMenuName;
 }
 
 
 //-------------------------------------------------------------------------------
-void GenWnd::Get_lpszClassName(LPCTSTR *s)
+LPCTSTR GenWnd::Get_lpszClassName(void)
 {
-	// TODO.
+	return wnd->lpszClassName;
 }
 
 
@@ -580,16 +599,16 @@ DWORD GenWnd::Get_dwExStyle(void)
 
 
 //-------------------------------------------------------------------------------
-void GenWnd::Get_lpClassName(LPCTSTR *s)
+LPCTSTR GenWnd::Get_lpClassName(void)
 {
-	// TODO.
+	return lpClassName;
 }
 
 
 //-------------------------------------------------------------------------------
-void GenWnd::Get_lpWindowName(LPCTSTR *s)
+LPCTSTR GenWnd::Get_lpWindowName(void)
 {
-	// TODO.
+	return lpWindowName;
 }
 
 
