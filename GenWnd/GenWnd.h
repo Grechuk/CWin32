@@ -112,11 +112,11 @@ class GenWnd
     // Função para alterar o nome do menu da janela.
     // NOTA: Lembrar de utilizar algo como strcpy, para evitar alocar memó-
     //       dinâmicamente. Se não existir tal função, crie uma você memso.
-    int Set_lpszMenuName(LPCTSTR *s);
+    int Set_lpszMenuName(LPCTSTR s);
 
 
     // Função para alterar o nome da classe da janela.
-    int Set_lpszClassName(LPCTSTR *s);
+    int Set_lpszClassName(LPCTSTR s);
 
 
     // Função para mudar a hisntância da janela.
@@ -148,11 +148,11 @@ class GenWnd
 
 
     // Função para alterar o nome da classe da janela.
-    int Set_lpClassName(LPCTSTR *s);
+    int Set_lpClassName(LPCTSTR s);
 
 
     // Função para alterar o nome da janela.
-    int Set_lpWindowName(LPCTSTR *s);
+    int Set_lpWindowName(LPCTSTR s);
 
 
     // Função para alterar o estilo da janela.
@@ -215,11 +215,11 @@ class GenWnd
 
 
     // Escreve o nome do menu na variável entrada.
-    void Get_lpszMenuName(LPCTSTR *s);
+    LPCTSTR Get_lpszMenuName(void);
 
 
     // Escreve o nome da classe na variável entrada.
-    void Get_lpszClassName(LPCTSTR *s);
+    LPCTSTR Get_lpszClassName(void);
 
 
     // Retorna a instância da janela.
@@ -251,11 +251,11 @@ class GenWnd
 
 
     // Escreve o nome da classe da janela na variável entrada.
-    void Get_lpClassName(LPCTSTR *s);
+    LPCTSTR Get_lpClassName(void);
 
 
     // Escreve o nome da janela na variável entrada.
-    void Get_lpWindowName(LPCTSTR *s);
+    LPCTSTR Get_lpWindowName(void);
 
 
     // Retorna o Estilo da janela.
